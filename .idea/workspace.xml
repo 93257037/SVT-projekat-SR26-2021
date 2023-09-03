@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fadd540d-0e3b-44c8-bb3b-d5de6ace7b73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WEB/SR262021/Sr262021Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/WEB/SR262021/Sr262021ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/krist/Desktop/SVT-KVT2023-main",
+    "last_opened_file_path": "C:/Users/krist/Desktop/web-projekat-sr26",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,7 +71,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693841082199</updated>
-      <workItem from="1693841083225" duration="1849000" />
+      <workItem from="1693841083225" duration="2647000" />
+      <workItem from="1693916013641" duration="16000" />
     </task>
     <servers />
   </component>
