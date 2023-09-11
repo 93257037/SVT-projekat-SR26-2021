@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <link rel="stylesheet" href="main.component.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-logo" routerLink="/main">
+        TwitterX
+      </a>
+    </div>
+    <div class="navbar-links">
+      <a class="navbar-link" routerLink="/profile">Profile</a>
+      <a class="navbar-link" routerLink="/groups">Groups</a>
+      <a class="navbar-link" *ngIf="hasToken() && isAdmin()" routerLink="/users">Users</a>
+      <a class="navbar-link" (click)="logout()" >Logout</a>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <div class="container">
+
+    <h2>TweetX</h2>
+    <form (ngSubmit)="createPost()">
+
+      <div class="form-group">
+        <textarea id="content" name="content" [(ngModel)]="registration.content" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <select id="groupId" name="groupId" [(ngModel)]="registration.groupId" class="form-control">
+          <option value="-1">Pick a group</option>
+
+          <option *ngFor="let group of groups" [value]="group.id">{{ group.name }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+  </div>
+  <br>
+  <br>
+  <div class="posts-container">
+    <div class="container">
+      <div class="posts">
+        <h3>TweetXs</h3>
+
+        <div class="post" *ngFor="let post of posts">
+          <div class="post-header">
+            <div class="post-user">{{ post.userName }}</div>
+            <div  class="post-buttons">
+              <button class="post-button" id="btnChange" *ngIf="isOwner(post.id) || isAdmin()" (click)="editPost(post.id)">Edit</button>
+              <button class="post-button" id="btnDelete" *ngIf="isOwner(post.id) || isAdmin()" (click)="deletePost(post.id)">Delete</button>
+            </div>
+          </div>
+          <div class="post-content">{{ post.content }}</div>
+          <div class="group-name" *ngIf="post.groupName">{{ post.groupName }}</div>
+
+
+<div class="post-reactions">
+            <div class="reaction-button">
+              <span class="reaction-icon" (click)="!isAdmin() && createReaction(post.id, 'LIKE'); refreshReactions(post.id)" [ngClass]="{ 'disabled': isAdmin() }">👍</span>
+              <div class="counter-popup-like">{{ post.likeCounter }}</div>
+            </div>
+            <div class="reaction-button">
+              <span class="reaction-icon" (click)="!isAdmin() && createReaction(post.id, 'DISLIKE'); refreshReactions(post.id)" [ngClass]="{ 'disabled': isAdmin() }">👎</span>
+              <div class="counter-popup-dislike">{{ post.dislikeCounter }}</div>
+            </div>
+            <div class="reaction-button">
+              <span class="reaction-icon" (click)="!isAdmin() && createReaction(post.id, 'HEART'); refreshReactions(post.id)" [ngClass]="{ 'disabled': isAdmin() }">❤️</span>
+              <div class="counter-popup-heart">{{ post.heartCounter }}</div>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
+  <br>
+  <br>

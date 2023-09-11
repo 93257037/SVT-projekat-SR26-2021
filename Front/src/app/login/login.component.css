@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Slightly lighter background color */
+}
+
+.container {
+  width: 50%; /* Slightly reduced container width */
+  background-color: grey;
+  border-radius: 8px; /* Increased border-radius for rounded corners */
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Added box shadow for a card effect */
+}
+
+.spacer {
+  height: 20px;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.login-form h2 {
+  color: #3498db; /* Set the color to the same as the button */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.login-form form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form input {
+  display: block;
+  width: 80%;
+  padding: 10px; /* Increased padding for inputs */
+  margin: 10px auto; /* Increased margin for inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#btnLogin {
+  width: 200px;
+  height: 60px; /* Increase the height */
+  margin-top: 20px; /* Increased margin-top */
+  background-color: #3498db; /* Change the background color */
+  color: #fff;
+  font-size: 20px; /* Increase the font size */
+  border: 2px solid #2980b9; /* Add a border with a different color */
+  border-radius: 10px; /* Increase the border radius for rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s; /* Add smooth transitions */
+}
+
+
+#btnLogin:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+  border-color: #3498db; /* Change the border color on hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+a {
+  padding-top: 20px; /* Increased padding-top */
+  color: #3498db;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18px; /* Increased font size */
+  text-decoration: none; /* Removed underline from the link */
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline; /* Added underline on hover */
+}

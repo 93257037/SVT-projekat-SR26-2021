@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="./registration.component.css">
+</head>
+<body>
+  <div class="container">
+    <div class="spacer"></div>
+    <div class="registration-form">
+      <h2>REGISTER</h2>
+      <form (ngSubmit)="onSubmit()" >
+
+        <input  type="text" id="firstName" name="firstName" [(ngModel)]="registration.firstName" required placeholder="First name">
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="registration.lastName" required placeholder="Last name">
+        <input type="email" id="email" name="email" [(ngModel)]="registration.email" required placeholder="Email">
+
+        <input type="text" id="username" name="username" [(ngModel)]="registration.username" required placeholder="Username">
+        <input type="password" id="password" name="password" [(ngModel)]="registration.password" required placeholder="Password">
+
+        <button type="submit" class="register-button">Register</button>
+        <a (click)="openLogin()">Login</a>
+
+      </form>
+    </div>
+    <div class="spacer"></div>
+  </div>
+</body>
+</html>

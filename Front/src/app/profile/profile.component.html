@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.component.css">
+</head>
+<body>
+  <div>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-logo" routerLink="/main">
+          TwitterX
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a class="navbar-link" (click)="logout()" >Logout</a>
+      </div>
+    </nav>
+
+    <div>
+      <label>User:</label>
+      <span>{{ currentUser.username }}</span>
+    </div>
+
+    <h2>Profile</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword" name="currentPassword" [(ngModel)]="passwordData.currentPassword" required>
+      </div>
+      <div>
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" name="newPassword" [(ngModel)]="passwordData.newPassword" required>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="passwordData.confirmPassword" required>
+      </div>
+      <button type="submit">Change Password</button>
+    </form>
+
+    <div class="groups">
+      <label>Groups:</label>
+      <div class="groupUser">
+        <div *ngFor="let group of groups" class="groupBox">{{ group.name }}</div>
+      </div>
+    </div>
+
+
+
+  </div>
+</body>
+</html>

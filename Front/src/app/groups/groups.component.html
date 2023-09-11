@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="groups.component.css">
+</head>
+<body>
+  <div>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-logo" routerLink="/main">TwitterX</a>
+      </div>
+      <div class="navbar-links">
+        <a class="add-group-button" routerLink="/group">Add group</a>
+        <a class="navbar-link" (click)="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <h2>Groups</h2>
+
+    <div class="all-groups-section">
+      <ul>
+        <li *ngFor="let group of groups" class="group-item">
+          <div class="group-info">
+            <a [routerLink]="['/groups', group.id]">{{ group.name }}</a>
+            <p>{{ group.description }}</p>
+          </div>
+          <button class="group-button" id="btnEdit" *ngIf="isAdmin() || isGroupAdmin(group.id)" (click)="editGroup(group.id)">Edit</button>
+          <button class="group-button" id="btnDelete" *ngIf="isAdmin() || isGroupAdmin(group.id)" (click)="deleteGroup(group.id)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

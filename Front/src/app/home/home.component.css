@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+  }
+
+  .right-half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+
+.button {
+  width: 200px;
+  height: 60px; /* Increase the height */
+  margin-bottom: 20px;
+  background-color: #3498db; /* Change the background color */
+  color: #fff;
+  font-size: 20px; /* Increase the font size */
+  border: 2px solid #2980b9; /* Add a border with a different color */
+  border-radius: 10px; /* Increase the border radius for rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s; /* Add smooth transitions */
+}
+
+.button:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+  border-color: #3498db; /* Change the border color on hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+
