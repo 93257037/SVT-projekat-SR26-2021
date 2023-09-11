@@ -36,25 +36,7 @@ public class PostController {
 	
 	@Autowired
 	private UserService userService;
-	
-//	@SuppressWarnings("unused")
-//	@PostMapping("/create")
-//    public ResponseEntity<Post> createPost(@RequestBody PostDTO postDTO) {
-//		
-//        Post createdPost = new Post();
-//        createdPost.setContent(postDTO.getContent());
-//        createdPost.setCreationDate(LocalDateTime.now());
-//        createdPost.setGroup(groupService.findGroupById(postDTO.getGroupId()));
-//        createdPost.setUser(userService.findByUsername(postDTO.getUserName()));
-//        postService.createPost(createdPost);
-//
-//        if (createdPost != null) {
-//            return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
-//        } else {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//        }
-//    }
-	
+
 	@PostMapping("/create")
 	public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO) {
 	    // Kreiranje objekta Post i postavljanje vrednosti
@@ -82,8 +64,6 @@ public class PostController {
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 	    }
 	}
-	
-	
 
 	
 	@GetMapping("/group/{groupId}")
@@ -134,25 +114,21 @@ public class PostController {
 	    Post existingPost = postService.findPostById(postId);
 
 	    if (existingPost != null) {
-	        // Ažurirajte samo sadržaj posta
 	        existingPost.setContent(postDTO);
 
 	        Post updatedPost = postService.updatePost(existingPost);
 
 	        if (updatedPost != null) {
-	            // Konvertujte objekat Post u PostDTO pre slanja odgovora
 	            PostDTO responseDTO = new PostDTO();
 	            responseDTO.setId(updatedPost.getId());
 	            responseDTO.setContent(updatedPost.getContent());
 	            responseDTO.setUserName(updatedPost.getUser().getUsername());
 	            responseDTO.setGroupId(updatedPost.getGroup().getId());
 
-	            // Vratite uspešan odgovor sa ažuriranim objektom PostDTO i statusom OK (200)
 	            return ResponseEntity.ok(responseDTO);
 	        }
 	    }
 
-	    // Ako post ne postoji ili ažuriranje nije uspelo, vratite odgovarajući odgovor sa statusom NOT_FOUND (404)
 	    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
@@ -162,11 +138,9 @@ public class PostController {
 
         if (existingPost != null) {
             postService.deletePost(postId);
-            // Vratite uspešan odgovor bez sadržaja sa statusom NO_CONTENT (204)
             return ResponseEntity.noContent().build();
         }
 
-        // Ako post ne postoji, vratite odgovarajući odgovor sa statusom NOT_FOUND (404)
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
     
@@ -180,7 +154,6 @@ public class PostController {
         Post updatedPost = postService.updatePost(existingPost);
 
         if (updatedPost != null) {
-          // Return a successful response with status 204 No Content
           return ResponseEntity.noContent().build();
         }
       }

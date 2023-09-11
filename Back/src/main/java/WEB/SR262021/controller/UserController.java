@@ -54,16 +54,6 @@ public class UserController {
     @Autowired
     TokenUtils tokenUtils;
 
-    /* Ili preporucen nacin: Constructor Dependency Injection
-    @Autowired
-    public UserController(UserServiceImpl userService, AuthenticationManager authenticationManager,
-                          UserDetailsService userDetailsService, TokenUtils tokenUtils){
-        this.userService = userService;
-        this.authenticationManager = authenticationManager;
-        this.userDetailsService = userDetailsService;
-        this.tokenUtils = tokenUtils;
-    }
-    */
     @PostMapping("/register")
     public ResponseEntity<UserDTO> create(@RequestBody @Validated UserDTO newUser){
 
@@ -114,7 +104,6 @@ public class UserController {
         // Perform the necessary updates on the existing resource
         userOrg.setPassword(passwordEncoder.encode(newPass));
 
-        // Add more fields to update as needed
         
         // Save the updated resource back to the database
         userService.save(userOrg);
@@ -128,10 +117,3 @@ public class UserController {
     public List<User> loadAll() {
         return this.userService.findAll();
     }
-
-//    @GetMapping("/")
-//    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
-//    public User user(Principal user) {
-//        return this.userService.findByUsername(user.getName());
-//    }
-}

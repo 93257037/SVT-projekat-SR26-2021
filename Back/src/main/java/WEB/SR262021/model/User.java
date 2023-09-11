@@ -57,17 +57,11 @@ public class User {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
-	
-//	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//	private List<Comment> comments;
-	
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private Set<Post> postList = new HashSet<Post>();
     
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//	private Set<Comment> commentList = new HashSet<Comment>();
-	  
-    
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<GroupAdmin> groupAdminList = new HashSet<GroupAdmin>();
     
@@ -163,14 +157,7 @@ public class User {
 		this.group = group;
 	}
     
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//    private Set<GroupRequest> groupRequestList = new HashSet<GroupRequest>();
-	
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//  private Set<Reaction> reactionList = new HashSet<Reaction>();
 
-
-	
 
 
 
